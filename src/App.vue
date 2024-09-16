@@ -1,5 +1,5 @@
 <template>
-  <h1><RealEstateCare/></h1>
+  <RealEstateCare/>
 </template>
 
 <script>
@@ -11,3 +11,4 @@
     }
   }
 </script>
+
