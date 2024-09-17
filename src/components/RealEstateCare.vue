@@ -2,7 +2,7 @@
     <v-app class="app">
         <recHeader/>
         <recMain/>
-        <recFooter/>
+        <recBottomNavigation/>
     </v-app>
     
 </template>
@@ -10,7 +10,7 @@
 <script>
 import recHeader from '@/components/header/recHeader.vue'
 import recMain from '@/components/main/recMain.vue'
-import recFooter from '@/components/footer/recFooter.vue'
+import recBottomNavigation from '@/components/bottom-navigation/recBottomNavigation.vue'
 
     export default {
         name: 'RealEstateCare',
@@ -22,15 +22,11 @@ import recFooter from '@/components/footer/recFooter.vue'
         components: {
             recHeader,
             recMain,
-            recFooter,
+            recBottomNavigation,
         }
     }
 </script>
 
 <style>
 
-
-.main-content {
-  flex-grow: 1; /* This makes the content area expand to fill the space */
-}
 </style>
