@@ -5,8 +5,12 @@
                 <h1 class="text-h5">Real Estate Care</h1>
                 <p class="text-subtitle-2 font-weight-light mt-n1">Caring is in our nature</p>
             </v-app-bar-title>
-            <v-icon icon="mdi-bell" class="mr-2 custom-text-color" ></v-icon>
-            <v-icon icon="mdi-cog" class="mr-2 custom-text-color"></v-icon>
+            <v-btn icon class="mr-n3">
+               <v-icon class="custom-text-color">mdi-bell</v-icon>
+            </v-btn>
+            <v-btn icon class="mr-2">
+              <v-icon class="custom-text-color">mdi-cog</v-icon>
+            </v-btn>
         </v-app-bar>
 </template>
 

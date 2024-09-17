@@ -3,6 +3,7 @@
         <v-container>
             <v-row>
                 <v-col cols="6" class="text-center">
+                    
                     <v-card class="d-flex flex-column justify-center align-center">
                         <v-icon
                         icon="mdi-invoice-text-clock"
