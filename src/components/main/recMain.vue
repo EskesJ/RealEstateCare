@@ -78,7 +78,7 @@
 
     }   
 
-    /deep/ .v-btn__overlay {
+    :deep(.v-btn__overlay) {
     background-color: transparent;
 }
 </style>
