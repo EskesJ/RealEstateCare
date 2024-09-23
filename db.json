@@ -94,7 +94,7 @@
           "location": "Attic",
           "newDamage": "Yes",
           "typeOfDamage": "Pest Infestation",
-          "date": "2024-09-17T14:00:00Z",
+          "date": "2024-09-30T14:00:00Z",
           "urgency": "Medium",
           "description": "Rodents detected, damaging insulation."
         }
@@ -137,7 +137,7 @@
           "location": "Garage",
           "newDamage": "No",
           "typeOfDamage": "Fire Hazard",
-          "date": "2024-09-18T08:45:00Z",
+          "date": "2024-09-09T08:45:00Z",
           "urgency": "Critical",
           "description": "Blocked emergency exit with stored items."
         }
@@ -180,7 +180,7 @@
           "location": "Bathroom",
           "newDamage": "Yes",
           "typeOfDamage": "Mold",
-          "date": "2024-09-19T11:00:00Z",
+          "date": "2024-09-10T11:00:00Z",
           "urgency": "Medium",
           "description": "Mold growth around the shower area."
         }

@@ -1,5 +1,4 @@
 <template>
-    <v-main class="d-flex align-center">
         <v-container>
             <v-row>
                 <v-col cols="6" class="text-center">
@@ -54,7 +53,6 @@
                 </v-col>
             </v-row>
         </v-container>
-    </v-main>
 </template>
 <script>
     export default {
@@ -75,7 +73,6 @@
 
     .v-card {
         height: 240px;
-
     }   
 
     :deep(.v-btn__overlay) {
