@@ -33,7 +33,8 @@ import recBottomNavigation from '@/components/bottom-navigation/recBottomNavigat
 
         async created() {
             try {
-                this.records = await apiService.getPosts();
+                this.records = await apiService.getPosts()
+                console.log(this.records[1].id);
             } catch (error) {
                 console.error('Failed to fetch posts:', error);
             }   
