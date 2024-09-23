@@ -1,0 +1,217 @@
+[
+  {
+    "id": 1,
+    "address": "123 Main St, Amsterdam",
+    "reportedDamage": [
+      {
+        "location": "Basement",
+        "newDamage": "Yes",
+        "typeOfDamage": "Water Damage",
+        "date": "2024-09-15T10:30:00Z",
+        "urgency": "Urgent",
+        "description": "Leaking pipe causing water accumulation in the basement."
+      }
+    ],
+    "overdueMaintenance": [
+      {
+        "location": "Living Room",
+        "typeOfMaintenance": "Painting",
+        "urgency": "No",
+        "costsIndication": "0-500"
+      }
+    ],
+    "technicalInstallations": [
+      {
+        "location": "Kitchen",
+        "typeOfInstallation": "Electrical",
+        "reportedMalfunction": "Exposed wiring",
+        "testProcedure": "Refer to safety guidelines PDF",
+        "approved": "No",
+        "comments": "Urgent repair needed to avoid electrical hazards."
+      }
+    ],
+    "inventoryModifications": [
+      {
+        "currentModifications": "Documented modification: installed new cabinets",
+        "location": "Kitchen",
+        "performedBy": "Contractor",
+        "description": "New cabinets installed without approval.",
+        "toDo": "Inspect and approve",
+        "comments": "Needs verification for safety compliance."
+      }
+    ],
+    "status": "Completed"
+  },
+  {
+    "id": 2,
+    "address": "456 Park Ave, Rotterdam",
+    "reportedDamage": [
+      {
+        "location": "Roof",
+        "newDamage": "No",
+        "typeOfDamage": "Structural Damage",
+        "date": "2024-09-16T09:00:00Z",
+        "urgency": "High",
+        "description": "Cracked roof beams, potential collapse risk."
+      }
+    ],
+    "overdueMaintenance": [
+      {
+        "location": "Bathroom",
+        "typeOfMaintenance": "Plumbing",
+        "urgency": "Yes",
+        "costsIndication": "500-1,500"
+      }
+    ],
+    "technicalInstallations": [
+      {
+        "location": "Garage",
+        "typeOfInstallation": "Heating",
+        "reportedMalfunction": "Malfunctioning boiler",
+        "testProcedure": "Refer to maintenance manual",
+        "approved": "No",
+        "comments": "Boiler needs immediate service."
+      }
+    ],
+    "inventoryModifications": [
+      {
+        "currentModifications": "Newly installed security system",
+        "location": "Entrance",
+        "performedBy": "Unknown",
+        "description": "Unapproved security system wiring.",
+        "toDo": "Inspect and remove if necessary",
+        "comments": "Potential electrical hazard."
+      }
+    ],
+    "status": "Completed"
+  },
+  {
+    "id": 3,
+    "address": "789 Oak St, Utrecht",
+    "reportedDamage": [
+      {
+        "location": "Attic",
+        "newDamage": "Yes",
+        "typeOfDamage": "Pest Infestation",
+        "date": "2024-09-17T14:00:00Z",
+        "urgency": "Medium",
+        "description": "Rodents detected, damaging insulation."
+      }
+    ],
+    "overdueMaintenance": [
+      {
+        "location": "Windows",
+        "typeOfMaintenance": "Glass Replacement",
+        "urgency": "No",
+        "costsIndication": "0-500"
+      }
+    ],
+    "technicalInstallations": [
+      {
+        "location": "Living Room",
+        "typeOfInstallation": "Cooling",
+        "reportedMalfunction": "Faulty air conditioning",
+        "testProcedure": "Check operational manual",
+        "approved": "No",
+        "comments": "Repair required for efficient cooling."
+      }
+    ],
+    "inventoryModifications": [
+      {
+        "currentModifications": "Repainted walls with unauthorized color",
+        "location": "Bedroom",
+        "performedBy": "Tenant",
+        "description": "Color does not meet property standards.",
+        "toDo": "Request repainting to standard color",
+        "comments": "Non-compliance with property regulations."
+      }
+    ],
+    "status": "Completed"
+  },
+  {
+    "id": 4,
+    "address": "101 Pine St, The Hague",
+    "reportedDamage": [
+      {
+        "location": "Garage",
+        "newDamage": "No",
+        "typeOfDamage": "Fire Hazard",
+        "date": "2024-09-18T08:45:00Z",
+        "urgency": "Critical",
+        "description": "Blocked emergency exit with stored items."
+      }
+    ],
+    "overdueMaintenance": [
+      {
+        "location": "Garden",
+        "typeOfMaintenance": "Fence Repair",
+        "urgency": "No",
+        "costsIndication": "500-1,500"
+      }
+    ],
+    "technicalInstallations": [
+      {
+        "location": "Basement",
+        "typeOfInstallation": "Ventilation",
+        "reportedMalfunction": "Inadequate airflow",
+        "testProcedure": "Air quality test required",
+        "approved": "No",
+        "comments": "Needs ventilation system upgrade."
+      }
+    ],
+    "inventoryModifications": [
+      {
+        "currentModifications": "Extended storage area without approval",
+        "location": "Basement",
+        "performedBy": "Tenant",
+        "description": "Non-standard construction of storage shelves.",
+        "toDo": "Evaluate and remove",
+        "comments": "Structural integrity concern."
+      }
+    ],
+    "status": "Completed"
+  },
+  {
+    "id": 5,
+    "address": "202 Elm St, Eindhoven",
+    "reportedDamage": [
+      {
+        "location": "Bathroom",
+        "newDamage": "Yes",
+        "typeOfDamage": "Mold",
+        "date": "2024-09-19T11:00:00Z",
+        "urgency": "Medium",
+        "description": "Mold growth around the shower area."
+      }
+    ],
+    "overdueMaintenance": [
+      {
+        "location": "Exterior Walls",
+        "typeOfMaintenance": "Repainting",
+        "urgency": "No",
+        "costsIndication": "1,500+"
+      }
+    ],
+    "technicalInstallations": [
+      {
+        "location": "Roof",
+        "typeOfInstallation": "Solar Panels",
+        "reportedMalfunction": "Broken panel connectors",
+        "testProcedure": "Contact solar service provider",
+        "approved": "No",
+        "comments": "Replacement of connectors required."
+      }
+    ],
+    "inventoryModifications": [
+      {
+        "currentModifications": "Installation of skylight without approval",
+        "location": "Attic",
+        "performedBy": "Contractor",
+        "description": "Unauthorized modification that affects roof structure.",
+        "toDo": "Inspect and possibly remove",
+        "comments": "Needs safety and structural check."
+      }
+    ],
+    "status": "Completed"
+  }
+]

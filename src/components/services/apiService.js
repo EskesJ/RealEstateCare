@@ -2,12 +2,12 @@
 import axios from 'axios';
 
 const apiService = {
-  baseUrl: 'https://my-json-server.typicode.com/typicode/demo',
+  baseUrl: 'https://my-json-server.typicode.com/EskesJ/RealEstateCare',
 
   // Fetch data from an API
   async getPosts() {
     try {
-      const response = await axios.get(`${this.baseUrl}/posts`);
+      const response = await axios.get(`${this.baseUrl}/db`);
       return response.data;
     } catch (error) {
       console.error("Error fetching posts:", error);
