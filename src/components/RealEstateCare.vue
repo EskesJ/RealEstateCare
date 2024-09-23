@@ -5,8 +5,8 @@
             <recMain/>
         <div>
             <h1>Posts</h1>
-            <ul v-if="posts">
-            <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
+            <ul v-if="records">
+            <li v-for="record in records" :key="record.id">{{ record.id }}</li>
             </ul>
         </div>
         </v-main>
@@ -27,13 +27,13 @@ import recBottomNavigation from '@/components/bottom-navigation/recBottomNavigat
         data() {
             return {
                 message: 'Hello World',
-                posts: [],
+                records: [],
             }
         },
 
         async created() {
             try {
-                this.posts = await apiService.getPosts();
+                this.records = await apiService.getPosts();
             } catch (error) {
                 console.error('Failed to fetch posts:', error);
             }   
