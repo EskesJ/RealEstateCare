@@ -7,7 +7,7 @@ const apiService = {
   // Fetch data from an API
   async getPosts() {
     try {
-      const response = await axios.get(`${this.baseUrl}/CompletedRecords`);
+      const response = await axios.get(`${this.baseUrl}`);
       return response.data;
     } catch (error) {
       console.error("Error fetching posts:", error);
