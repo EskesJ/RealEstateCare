@@ -35,8 +35,8 @@ export default {
             const data = await apiService.getPosts();
 
             this.records = data.sort((a, b) => {
-                const dateA = new Date(a.reportedDamage[0].date);
-                const dateB = new Date(b.reportedDamage[0].date);
+                const dateA = new Date(a.visitedDate);
+                const dateB = new Date(b.visitedDate);
                 return dateB - dateA; 
             });
 

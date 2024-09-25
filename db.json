@@ -3,6 +3,7 @@
     {
       "id": 1,
       "address": "123 Main St, Amsterdam",
+      "visitedDate": "2024-09-16T14:00:00Z",
       "reportedDamage": [
         {
           "location": "Basement",
@@ -46,6 +47,7 @@
     {
       "id": 2,
       "address": "456 Park Ave, Rotterdam",
+      "visitedDate": "2024-09-17T11:00:00Z",
       "reportedDamage": [
         {
           "location": "Roof",
@@ -89,6 +91,7 @@
     {
       "id": 3,
       "address": "789 Oak St, Utrecht",
+      "visitedDate": "2024-10-01T09:00:00Z",
       "reportedDamage": [
         {
           "location": "Attic",
@@ -132,6 +135,7 @@
     {
       "id": 4,
       "address": "101 Pine St, The Hague",
+      "visitedDate": "2024-09-10T12:30:00Z",
       "reportedDamage": [
         {
           "location": "Garage",
@@ -175,6 +179,7 @@
     {
       "id": 5,
       "address": "202 Elm St, Eindhoven",
+      "visitedDate": "2024-09-11T15:30:00Z",
       "reportedDamage": [
         {
           "location": "Bathroom",
