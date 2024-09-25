@@ -4,7 +4,7 @@
             <v-list-item v-for="(record, index) in records"
             :key="record.id">
                 <v-btn @click="selectedIndex = index" block height="100%" class="bg-white px-0" variant="outlined">
-                    <v-card class="py-2" :title="'Project ' + record.id + ' / ' + record.reportedDamage[0].date"
+                    <v-card class="py-2" :title="'Project ' + record.id + ' / ' + new Date(record.visitedDate).toLocaleString()"
                     >{{ record.address }}</v-card>
                 </v-btn>
             </v-list-item>
@@ -35,8 +35,10 @@ export default {
             const data = await apiService.getPosts();
 
             this.records = data.sort((a, b) => {
+                console.log(a.visitedDate);     
                 const dateA = new Date(a.visitedDate);
                 const dateB = new Date(b.visitedDate);
+                
                 return dateB - dateA; 
             });
 

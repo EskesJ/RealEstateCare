@@ -1,7 +1,8 @@
 class Inspection {
-    constructor({ id, address, reportedDamage, overdueMaintenance, technicalInstallations, inventoryModifications, status }) {
+    constructor({ id, address, visitedDate, reportedDamage, overdueMaintenance, technicalInstallations, inventoryModifications, status }) {
       this.id = id;
       this.address = address;
+      this.visitedDate = visitedDate;
       this.reportedDamage = reportedDamage;
       this.overdueMaintenance = overdueMaintenance;
       this.technicalInstallations = technicalInstallations;

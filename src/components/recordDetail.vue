@@ -7,7 +7,7 @@
         <v-card-text>
           <p class="mx-1"><strong>ID:</strong> {{ selectedProject.id }}</p>
           <p class="mx-1"><strong>Address:</strong> {{ selectedProject.address }}</p>
-          <p class="mx-1"><strong>Visited on:</strong> {{ selectedProject.visitedDate }}</p>
+          <p class="mx-1"><strong>Visited on:</strong> {{ new Date(selectedProject.visitedDate).toLocaleString() }}</p>
           <p class="mx-1"><strong>Status:</strong> {{ selectedProject.status }}</p>
         </v-card-text>
       </v-card>
