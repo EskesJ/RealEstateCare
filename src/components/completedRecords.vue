@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import apiService from '@/components/services/apiService';
+import apiService from '@/services/apiService.js';
 import recordDetail from '@/components/recordDetail.vue';
 
 

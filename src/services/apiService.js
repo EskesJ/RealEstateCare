@@ -1,5 +1,6 @@
 // Import Axios
 import axios from 'axios';
+import Inspection from './inspection';
 
 const apiService = {
   baseUrl: 'https://my-json-server.typicode.com/EskesJ/RealEstateCare',
@@ -8,7 +9,7 @@ const apiService = {
   async getPosts() {
     try {
       const response = await axios.get(`${this.baseUrl}/completedRecords`);
-      return response.data;
+      return response.data.map(record => new Inspection(record));
     } catch (error) {
       console.error("Error fetching posts:", error);
       throw error;
