@@ -32,8 +32,7 @@ class Inspection {
             console.error('Invalid section specified');
         }
       }
-  
-    // Example method that might be used in the future for calculations or updates
+      
     updateStatus(newStatus) {
       this.status = newStatus;
     }
