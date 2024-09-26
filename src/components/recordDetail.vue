@@ -150,4 +150,7 @@
     list-style: none;
     padding: 0;
   }
+  img {
+    max-inline-size: 100%;
+  }
   </style>
