@@ -1,23 +1,19 @@
 <template>
-    <div>
+    <v-container> 
         <v-list v-if="records" lines="two">
             <v-list-item v-for="(record, index) in records"
             :key="record.id">
                 <v-btn @click="showDetail(index)" block height="100%" class="bg-white px-0" variant="outlined">
-                    <v-card class="py-2" :title="'Project ' + record.id + ' / ' + new Date(record.visitedDate).toLocaleString()"
+                    <v-card variant="plain" class="py-2" :title="'Project ' + record.id + ' / ' + new Date(record.visitedDate).toLocaleString()"
                     >{{ record.address }}</v-card>
                 </v-btn>
             </v-list-item>
         </v-list>
-    </div>
-    <div>
-        <!-- <recordDetail v-if="selectedIndex != null" :selectedProject="records[selectedIndex]"/> -->
-    </div>
+    </v-container>
 </template>
 
 <script>
 import apiService from '@/services/apiService.js';
-import recordDetail from '@/views/recordDetail.vue';
 
 
 export default {
@@ -56,9 +52,14 @@ export default {
             console.error('Failed to fetch posts:', error);
         }
     },
-
-    components: {
-        recordDetail
-    }
 }
 </script>
+
+<style scoped>
+
+
+:deep(.v-btn__overlay) {
+background-color: transparent;
+}
+
+</style>
