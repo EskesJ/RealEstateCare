@@ -1,6 +1,6 @@
 <template>
         <v-app-bar class="toolbar">
-            <img class="ml-2 mr-n4" :src="getImgUrl()">
+            <router-link to="/"><img class="ml-2 mr-n4" :src="getImgUrl()"></router-link>
             <v-app-bar-title class="custom-text-color">
                 <h1 class="text-h5">Real Estate Care</h1>
                 <p class="text-subtitle-2 font-weight-light mt-n1">Caring is in our nature</p>
@@ -17,12 +17,9 @@
 <script>
     export default {
         name: 'recHeader',
-        data() {
-            
-            },
         methods: {
             getImgUrl() {
-                return new URL('../icons/logo-1.svg', import.meta.url).href;
+                return new URL('icons/logo-1.svg', import.meta.url).href;
             }
         }
     }

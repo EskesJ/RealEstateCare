@@ -3,7 +3,7 @@
         <v-list v-if="records" lines="two">
             <v-list-item v-for="(record, index) in records"
             :key="record.id">
-                <v-btn @click="selectedIndex = index" block height="100%" class="bg-white px-0" variant="outlined">
+                <v-btn @click="showDetail(index)" block height="100%" class="bg-white px-0" variant="outlined">
                     <v-card class="py-2" :title="'Project ' + record.id + ' / ' + new Date(record.visitedDate).toLocaleString()"
                     >{{ record.address }}</v-card>
                 </v-btn>
@@ -11,13 +11,13 @@
         </v-list>
     </div>
     <div>
-        <recordDetail v-if="selectedIndex != null" :selectedProject="records[selectedIndex]"/>
+        <!-- <recordDetail v-if="selectedIndex != null" :selectedProject="records[selectedIndex]"/> -->
     </div>
 </template>
 
 <script>
 import apiService from '@/services/apiService.js';
-import recordDetail from '@/components/recordDetail.vue';
+import recordDetail from '@/views/recordDetail.vue';
 
 
 export default {
@@ -27,6 +27,16 @@ export default {
             records: [],
             selectedProject: null,
             selectedIndex: null
+        }
+    },
+    methods: {
+        showDetail(index) {
+            this.$router.push({
+                name: 'recordDetail',
+                params: {
+                    id: this.records[index].id
+                }
+            })
         }
     },
     async created() {
@@ -42,7 +52,6 @@ export default {
                 return dateB - dateA; 
             });
 
-            console.log(this.records);
         } catch (error) {
             console.error('Failed to fetch posts:', error);
         }

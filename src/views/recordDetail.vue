@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container v-if="selectedProject">
 
     <v-card class="my-2">
       <v-card-item>
@@ -130,15 +130,35 @@
 </template>
   
   <script>
+  import apiService from '@/services/apiService.js'
+
   export default {
     name: 'recordDetail',
-    props: ['selectedProject'],
+    created() {
+      const id = this.$route.params.id;
+      this.loadRecord(id)
+    },
+    data() {
+      return {
+        records: [],
+        selectedProject: null
+      } 
+    },
     methods: {
+      async loadRecord(id) {
+        try {
+            const data = await apiService.getPosts();
+            this.selectedProject = data.find(record => record.id === parseInt(id));
+            console.log(this.selectedProject.address);
+          } catch (error) {
+            console.error('Failed to fetch post:', error);
+          }  
+      },
       uploadPhoto(section, event) {
         const file = event.target.files[0];
         if (file) {
-          const photoUrl = URL.createObjectURL(file); // Generate a URL for the file
-          this.selectedProject[`${section}Photos`].push(photoUrl); // Push the photo URL to the correct section
+          const photoUrl = URL.createObjectURL(file); 
+          this.selectedProject[`${section}Photos`].push(photoUrl); 
         }
       },
     },
