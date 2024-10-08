@@ -5,6 +5,7 @@ import completedRecords from '@/views/completedRecords.vue'
 import knowledge from '@/views/knowledgeBase.vue'
 import settings from '@/views/settings.vue'
 import recordDetail from '@/views/recordDetail.vue'
+import recordAssigned from '@/views/recordAssigned.vue'
 
 
 const routes = [
@@ -27,6 +28,11 @@ const routes = [
     path: '/scheduled', 
     name: 'scheduled',
     component: scheduled
+  },
+  { 
+    path: '/recordAssigned/:id', 
+    name: 'recordAssigned',
+    component: recordAssigned
   },
   { 
     path: '/knowledge', 

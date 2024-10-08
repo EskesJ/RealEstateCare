@@ -1,12 +1,12 @@
 <template>
-    <h1>Scheduled Tasks</h1>
     <v-container> 
+        <h1>Scheduled Tasks</h1>
         <v-list v-if="records" lines="two">
             <v-list-item v-for="(record, index) in records"
             :key="record.id">
-                <v-btn @click="showDetail(index)" block height="100%" class="bg-white px-0">
-                    <v-card variant="outlined" class="py-2" :title="'Project ' + record.id + ' / ' + new Date(record.visitedDate).toLocaleString()"
-                    >{{ record.address }}</v-card>
+                <v-btn @click="showInfo(index)" block height="100%" class="bg-white px-0">
+                    <v-card variant="outlined" class="py-2" :title="'Project ' + record.id + ' / ' + record.address"
+                        ><v-card-text>To visit on {{ new Date(record.dateToVisit).toLocaleString() }}</v-card-text></v-card>
                 </v-btn>
             </v-list-item>
         </v-list>
@@ -27,14 +27,14 @@
         },
 
         methods: {
-            // showDetail(index) {
-            //     this.$router.push({
-            //         name: 'recordDetail',
-            //         params: {
-            //             id: this.records[index].id
-            //         }
-            //     })
-            // }
+            showInfo(index) {
+                this.$router.push({
+                    name: 'recordAssigned',
+                    params: {
+                        id: this.records[index].id
+                    }
+                })
+            }
         },
 
         async created() {
@@ -43,11 +43,11 @@
                 const data = await apiService.getScheduledTasks();
 
                 this.records = data.sort((a, b) => {
-                    console.log(a.visitedDate);     
-                    const dateA = new Date(a.visitedDate);
-                    const dateB = new Date(b.visitedDate);
+                    console.log(a.dateToVisit);     
+                    const dateA = new Date(a.dateToVisit);
+                    const dateB = new Date(b.dateToVisit);
                     
-                    return dateB - dateA; 
+                    return dateA - dateB; 
                 });
 
             } catch (error) {
@@ -56,3 +56,9 @@
         },
     }
 </script>
+
+<style scoped>
+    h1 {
+        text-align: center;
+    }
+</style>
