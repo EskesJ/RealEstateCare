@@ -6,9 +6,19 @@ const apiService = {
   baseUrl: 'https://my-json-server.typicode.com/EskesJ/RealEstateCare',
 
   // Fetch data from an API
-  async getPosts() {
+  async getCompletedRecords() {
     try {
       const response = await axios.get(`${this.baseUrl}/completedRecords`);
+      return response.data.map(record => new Inspection(record));
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+      throw error;
+    }
+  },
+
+  async getScheduledTasks() {
+    try {
+      const response = await axios.get(`${this.baseUrl}/scheduledTasks`);
       return response.data.map(record => new Inspection(record));
     } catch (error) {
       console.error("Error fetching posts:", error);

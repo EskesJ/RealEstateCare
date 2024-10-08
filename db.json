@@ -1,4 +1,32 @@
 {
+  "scheduledTasks": [
+    {
+      "id": 101,
+      "address": "789 Oak St, Utrecht",
+      "dateToVisit": "2024-10-21T09:00:00Z"
+    },
+    {
+      "id": 102,
+      "address": "456 Park Ave, Rotterdam",
+      "dateToVisit": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 103,
+      "address": "101 Pine St, The Hague",
+      "dateToVisit": "2024-10-22T08:45:00Z"
+    },
+    {
+      "id": 104,
+      "address": "123 Main St, Amsterdam",
+      "dateToVisit": "2024-10-25T10:00:00Z"
+    },
+    {
+      "id": 105,
+      "address": "202 Elm St, Eindhoven",
+      "dateToVisit": "2024-10-27T11:15:00Z"
+    }
+  ],
+
   "completedRecords": [
     {
       "id": 1,

@@ -147,7 +147,7 @@
     methods: {
       async loadRecord(id) {
         try {
-            const data = await apiService.getPosts();
+            const data = await apiService.getCompletedRecords();
             this.selectedProject = data.find(record => record.id === parseInt(id));
             console.log(this.selectedProject.address);
           } catch (error) {

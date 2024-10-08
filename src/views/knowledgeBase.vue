@@ -33,6 +33,12 @@
                     "Electrical Safety Compliance Standards"
                 ]
             }
+        },
+        methods: {
+            downloadFile(file) {
+                //for future expansion outside the scope of this assignment
+                console.log('downloading ' + file);
+            }
         }
     }
 </script>

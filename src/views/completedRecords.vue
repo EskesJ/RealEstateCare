@@ -3,8 +3,8 @@
         <v-list v-if="records" lines="two">
             <v-list-item v-for="(record, index) in records"
             :key="record.id">
-                <v-btn @click="showDetail(index)" block height="100%" class="bg-white px-0" variant="outlined">
-                    <v-card variant="plain" class="py-2" :title="'Project ' + record.id + ' / ' + new Date(record.visitedDate).toLocaleString()"
+                <v-btn @click="showDetail(index)" block height="100%" class="bg-white px-0">
+                    <v-card variant="outlined" class="py-2" :title="'Project ' + record.id + ' / ' + new Date(record.visitedDate).toLocaleString()"
                     >{{ record.address }}</v-card>
                 </v-btn>
             </v-list-item>
@@ -38,7 +38,7 @@ export default {
     async created() {
         try {
 
-            const data = await apiService.getPosts();
+            const data = await apiService.getCompletedRecords();
 
             this.records = data.sort((a, b) => {
                 console.log(a.visitedDate);     
