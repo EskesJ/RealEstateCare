@@ -5,7 +5,7 @@
                 <h1 class="text-h5">Real Estate Care</h1>
                 <p class="text-subtitle-2 font-weight-light mt-n1">Caring is in our nature</p>
             </v-app-bar-title>
-            <v-btn v-if="$route.name !== 'login'" icon class="mr-2">
+            <v-btn v-if="$route.name !== 'login' && $route.name !== 'secondLogin'" icon class="mr-2">
               <v-icon class="custom-text-color">mdi-cog</v-icon>
             </v-btn>
         </v-app-bar>

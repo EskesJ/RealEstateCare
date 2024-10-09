@@ -3,7 +3,7 @@
     <v-card class="px-5 py-5" width="100%">
       <v-card-title class="text-h5">Login</v-card-title>
       <v-card-text>
-        <v-form ref="loginForm" @submit.prevent="handleLogin">
+        <v-form ref="loginForm" @submit.prevent="handleLogin()">
 
           <v-text-field
             label="Username"

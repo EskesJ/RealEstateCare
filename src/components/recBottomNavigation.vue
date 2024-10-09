@@ -1,6 +1,6 @@
 <template>
     <v-bottom-navigation class="custom-navigation">
-        <v-btn v-if="$route.name !== 'login'" @click="logout()" value="logout" :active="false">
+        <v-btn v-if="$route.name !== 'login' && $route.name !== 'secondLogin'" @click="logout()" value="logout" :active="false">
             <v-icon>mdi-logout</v-icon>
             <span>logout</span>
         </v-btn>

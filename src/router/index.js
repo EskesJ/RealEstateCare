@@ -72,20 +72,20 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const isAuthenticated = localStorage.getItem('authenticated');
   const secondAuthenticated = localStorage.getItem('secondAuthenticated');
+
   
-  
-  if (to.name !== 'login' && !isAuthenticated) {
+  if (to.name === 'login' || to.name === 'information') {
+    next();
+  }
+
+  else if (to.name === 'secondLogin' && !isAuthenticated) {
     next({ name: 'login' });
   }
-
-  else if (to.name !== 'secondLogin' && isAuthenticated && !secondAuthenticated) {
+ 
+  else if (to.name !== 'secondLogin' && to.name !== 'login' && to.name !== 'information' && !secondAuthenticated) {
     next({ name: 'secondLogin' });
-  }
+  } 
   
-  else if ((to.name === 'login' || to.name === 'secondLogin') && isAuthenticated && secondAuthenticated) {
-    next({ name: 'dashboard' });
-  }
-
   else {
     next();
   }
