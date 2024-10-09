@@ -1,16 +1,11 @@
 <template>
     <v-bottom-navigation class="custom-navigation">
-        <v-btn value="active-task">
-            <v-icon>mdi-folder-open</v-icon>
-            <span>active task</span>
+        <v-btn v-if="$route.name !== 'login'" @click="logout()" value="logout" :active="false">
+            <v-icon>mdi-logout</v-icon>
+            <span>logout</span>
         </v-btn>
 
-        <v-btn value="search">
-            <v-icon>mdi-file-search-outline</v-icon>
-            <span>search</span>
-        </v-btn>
-
-        <v-btn value="info">
+        <v-btn @click="navigateTo('information')" value="info" :active="false">
             <v-icon>mdi-information</v-icon>
             <span>information</span>
         </v-btn>
@@ -20,10 +15,22 @@
 <script>
     export default {
         name: 'recBottomNavigation',
-
-        data() {
-            return {
-
+        methods: {
+            navigateTo(routeName) {
+                this.$router.push({ name: routeName }).then(() => {
+                    this.resetActive();
+                });
+            },
+            logout() {
+                localStorage.removeItem("authenticated");
+                localStorage.removeItem("secondAuthenticated");
+                this.$router.push({ name: "login" });
+            },
+            resetActive() {
+                // Force update of active state by resetting focus
+                this.$nextTick(() => {
+                    document.activeElement.blur();
+                });
             }
         }
     }

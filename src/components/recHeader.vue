@@ -1,14 +1,11 @@
 <template>
         <v-app-bar class="toolbar">
-            <router-link to="/"><img class="ml-2 mr-n4" :src="getImgUrl()"></router-link>
+            <router-link to="/dashboard"><img class="ml-2 mr-n4" :src="getImgUrl()"></router-link>
             <v-app-bar-title class="custom-text-color">
                 <h1 class="text-h5">Real Estate Care</h1>
                 <p class="text-subtitle-2 font-weight-light mt-n1">Caring is in our nature</p>
             </v-app-bar-title>
-            <v-btn icon class="mr-n3">
-               <v-icon class="custom-text-color">mdi-bell</v-icon>
-            </v-btn>
-            <v-btn icon class="mr-2">
+            <v-btn v-if="$route.name !== 'login'" icon class="mr-2">
               <v-icon class="custom-text-color">mdi-cog</v-icon>
             </v-btn>
         </v-app-bar>
