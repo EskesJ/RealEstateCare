@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import apiService from '@/services/apiService.js';
+    import { useMainStore } from '@/stores/mainStore';    
 
     export default {
         name: 'scheduled',
@@ -22,7 +22,8 @@
             return {
                 records: [],
                 selectedProject: null,
-                selectedIndex: null
+                selectedIndex: null,
+                store: useMainStore()
             }
         },
 
@@ -38,21 +39,14 @@
         },
 
         async created() {
-            try {
-
-                const data = await apiService.getScheduledTasks();
-
-                this.records = data.sort((a, b) => {
-                    console.log(a.dateToVisit);     
-                    const dateA = new Date(a.dateToVisit);
-                    const dateB = new Date(b.dateToVisit);
-                    
-                    return dateA - dateB; 
-                });
-
-            } catch (error) {
-            console.error('Failed to fetch posts:', error);
-            }   
+      // Call the store action to fetch and populate the data in the store
+            await this.store.fetchScheduledTasks();
+  
+      // Populate the component's records variable with the data from the store
+            this.records = this.store.scheduledTasks;
+  
+      // Sort the records
+            this.records.sort((a, b) => new Date(a.dateToVisit) - new Date(b.dateToVisit));
         },
     }
 </script>

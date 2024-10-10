@@ -6,6 +6,7 @@
 
 // Plugins
 import { registerPlugins } from '@/plugins'
+import { createPinia } from 'pinia'
 
 // Components
 import App from './App.vue'
@@ -15,7 +16,8 @@ import { createApp } from 'vue'
 import router from '@/router'
 
 const app = createApp(App)
+const pinia = createPinia()
 
 registerPlugins(app)
 
-app.use(router).mount('#app')
+app.use(router).use(pinia).mount('#app')

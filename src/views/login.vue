@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import { useMainStore } from '@/stores/mainStore';
+
 export default {
   name: "login",
   data() {
@@ -47,13 +49,17 @@ export default {
                 });
             });
         },
+        
     handleLogin() {
-      const storedUsername = localStorage.getItem("username");
-      const storedPassword = localStorage.getItem("password");
+        const store = useMainStore();
+        const storedUsername = localStorage.getItem("username");
+        const storedPassword = localStorage.getItem("password");
 
       if (this.username === storedUsername && this.password === storedPassword) {
-        localStorage.setItem('authenticated', true);
-        this.$router.push({ name: "secondLogin" });
+        store.setAuthenticated(true);
+        this.$router.push({ 
+            name: "secondLogin" 
+        });
       } else {
         alert("Invalid credentials");
       }

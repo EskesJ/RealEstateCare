@@ -1,4 +1,5 @@
 import { createWebHistory, createRouter } from 'vue-router'
+import { useMainStore } from '@/stores/mainStore';
 import login from '@/views/login.vue'
 import secondLogin from '@/views/secondLogin.vue'
 import dashboard from '@/views/dashboard.vue'
@@ -70,25 +71,31 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const isAuthenticated = localStorage.getItem('authenticated');
-  const secondAuthenticated = localStorage.getItem('secondAuthenticated');
+  const store = useMainStore();
+  const isAuthenticated = store.authenticated;
+  const isSecondAuthenticated = store.secondAuthenticated;
 
-  
-  if (to.name === 'login' || to.name === 'information') {
-    next();
-  }
-
-  else if (to.name === 'secondLogin' && !isAuthenticated) {
-    next({ name: 'login' });
-  }
- 
-  else if (to.name !== 'secondLogin' && to.name !== 'login' && to.name !== 'information' && !secondAuthenticated) {
+  if (to.name === 'login' && isAuthenticated) {
+   
     next({ name: 'secondLogin' });
-  } 
-  
-  else {
+  } else if (to.name === 'secondLogin' && (!isAuthenticated || isSecondAuthenticated)) {
+   
+    if (!isAuthenticated) {
+      next({ name: 'login' });
+    } else {
+      next({ name: 'dashboard' });
+    }
+  } else if (!isAuthenticated && to.name !== 'login') {
+    
+    next({ name: 'login' });
+  } else if (isAuthenticated && !isSecondAuthenticated && to.name !== 'secondLogin') {
+      
+    next({ name: 'secondLogin' });
+  } else {
+
     next();
   }
 });
+
 
 export default router;

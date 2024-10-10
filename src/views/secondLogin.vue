@@ -1,16 +1,16 @@
 <template>
     <v-container class="d-flex justify-center align-center fill-height">
       <v-card class="px-5 py-5" max-width="400">
-        <v-card-title class="text-h6">Enter Authentication Code</v-card-title>
+        <v-card-title class="text-h5">Enter Authentication Code</v-card-title>
         <v-card-text>
-          <v-form ref="authForm" @submit.prevent="verifyCode">
+          <v-form ref="codeForm" @submit.prevent="verifyCode">
             <v-text-field
               label="Authentication Code"
-              type="password"
               v-model="authCode"
+              type="password"
               required
             ></v-text-field>
-            <v-btn type="submit" color="primary" class="mt-4" block>Verify</v-btn>
+            <v-btn type="submit" color="primary" class="mt-4" block>Submit</v-btn>
           </v-form>
         </v-card-text>
       </v-card>
@@ -18,6 +18,8 @@
   </template>
   
   <script>
+  import { useMainStore } from '@/stores/mainStore';
+  
   export default {
     name: "secondLogin",
     data() {
@@ -27,17 +29,18 @@
     },
     methods: {
       verifyCode() {
-        const expectedCode = localStorage.getItem("authCode");
-        if (this.authCode === expectedCode) {
-          localStorage.setItem('secondAuthenticated', true);
+        
+        const store = useMainStore();
+        const correctCode = "12345"; 
+  
+        if (this.authCode === correctCode) {
+          store.setSecondAuthenticated(true);
+          store.setUsername(localStorage.getItem('username'));
           this.$router.push({ name: "dashboard" });
         } else {
           alert("Invalid authentication code");
         }
       }
-    },
-    mounted() {
-      localStorage.setItem("authCode", "123456");
     }
   };
   </script>

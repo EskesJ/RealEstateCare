@@ -5,15 +5,26 @@
                 <h1 class="text-h5">Real Estate Care</h1>
                 <p class="text-subtitle-2 font-weight-light mt-n1">Caring is in our nature</p>
             </v-app-bar-title>
-            <v-btn v-if="$route.name !== 'login' && $route.name !== 'secondLogin'" icon class="mr-2">
-              <v-icon class="custom-text-color">mdi-cog</v-icon>
-            </v-btn>
+            <router-link to="/settings">
+                <v-btn v-if="isAuthenticated" icon class="mr-2">
+                  <v-icon class="custom-text-color">mdi-cog</v-icon>
+                </v-btn>
+            </router-link>
         </v-app-bar>
 </template>
 
 <script>
+    import { useMainStore } from '@/stores/mainStore';
+    
     export default {
         name: 'recHeader',
+        computed: {
+            isAuthenticated() {
+                const store = useMainStore();
+                return store.authenticated && store.secondAuthenticated;
+            }
+        },
+
         methods: {
             getImgUrl() {
                 return new URL('icons/logo-1.svg', import.meta.url).href;
