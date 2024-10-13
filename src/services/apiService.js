@@ -26,17 +26,6 @@ const apiService = {
       throw error;
     }
   },
-
-  // Post data to an API (example)
-//   async createPost(postData) {
-//     try {
-//       const response = await axios.post(`${this.baseUrl}/posts`, postData);
-//       return response.data;
-//     } catch (error) {
-//       console.error("Error creating post:", error);
-//       throw error;
-//     }
-//   }
 };
 
 export default apiService;

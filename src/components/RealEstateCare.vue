@@ -1,17 +1,17 @@
 <template>
     <v-app class="app">
-        <recHeader/>
+        <main-header/>
         <v-main class="d-flex align-center flex-column justify-center">
             <router-view></router-view>
         </v-main>
-        <recBottomNavigation/>
+        <bottom-navigation/>
     </v-app>
     
 </template>
 
 <script>
-import recHeader from '@/components/MainHeader.vue'
-import recBottomNavigation from '@/components/BottomNavigation.vue'
+import MainHeader from '@/components/MainHeader.vue'
+import BottomNavigation from '@/components/BottomNavigation.vue'
 
     export default {
         name: 'RealEstateCare',
@@ -22,8 +22,8 @@ import recBottomNavigation from '@/components/BottomNavigation.vue'
         },
 
         components: {
-            recHeader,
-            recBottomNavigation,
+            MainHeader,
+            BottomNavigation,
         }
     }
 </script>

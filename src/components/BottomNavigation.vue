@@ -36,7 +36,7 @@
       },
       logout() {
         const store = useMainStore();
-        store.logout(); // This will reset the authentication states
+        store.logout(); 
         this.$router.push({ name: "Login" });
       },
       resetActive() {

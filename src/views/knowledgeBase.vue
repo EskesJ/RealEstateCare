@@ -36,7 +36,6 @@
         },
         methods: {
             downloadFile(file) {
-                //for future expansion outside the scope of this assignment
                 console.log('downloading ' + file);
             }
         }
@@ -46,9 +45,9 @@
 <style scoped>
 
 .file-name {
-    white-space: normal; /* Allow text wrapping */
-    word-break: break-word; /* Break words if necessary */
-    max-width: 100%; /* Ensures the text wraps within the card width */
+    white-space: normal; 
+    word-break: break-word; 
+    max-width: 100%; 
     display: inline-block;
 }
 
