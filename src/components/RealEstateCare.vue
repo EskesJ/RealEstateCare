@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import recHeader from '@/components/recHeader.vue'
-import recBottomNavigation from '@/components/recBottomNavigation.vue'
+import recHeader from '@/components/MainHeader.vue'
+import recBottomNavigation from '@/components/BottomNavigation.vue'
 
     export default {
         name: 'RealEstateCare',

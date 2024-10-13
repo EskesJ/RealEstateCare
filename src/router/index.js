@@ -1,15 +1,15 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import { useMainStore } from '@/stores/mainStore';
-import login from '@/views/login.vue'
-import secondLogin from '@/views/secondLogin.vue'
-import dashboard from '@/views/dashboard.vue'
-import scheduled from '@/views/scheduledTasks.vue'
-import completedRecords from '@/views/completedRecords.vue'
-import knowledge from '@/views/knowledgeBase.vue'
-import settings from '@/views/settings.vue'
-import recordDetail from '@/views/recordDetail.vue'
-import recordAssigned from '@/views/recordAssigned.vue'
-import information from '@/views/information.vue'
+import login from '@/views/Login.vue'
+import secondLogin from '@/views/SecondLogin.vue'
+import dashboard from '@/views/MainDashboard.vue'
+import scheduled from '@/views/ScheduledTasks.vue'
+import completedRecords from '@/views/CompletedRecords.vue'
+import knowledge from '@/views/KnowledgeBase.vue'
+import settings from '@/views/Settings.vue'
+import recordDetail from '@/views/RecordDetail.vue'
+import recordAssigned from '@/views/RecordAssigned.vue'
+import information from '@/views/Information.vue'
 
 
 const routes = [

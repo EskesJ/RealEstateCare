@@ -28,7 +28,7 @@
 import { useMainStore } from '@/stores/mainStore';
 
 export default {
-  name: "login",
+  name: "Login",
   data() {
     return {
       username: "",
