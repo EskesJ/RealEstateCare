@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <h1>Knowledge Base</h1>
+        <h1 class="my-3">Knowledge Base</h1>
         <v-row >
             <v-col v-for="(file, index) in guidelines" :key="index" cols="12">
                 <v-btn class="px-0" block height="100%"  @click="downloadFile(file) " >
@@ -55,6 +55,10 @@
 
 :deep(.v-btn__overlay) {
 background-color: transparent;
+}
+
+h1 {
+    text-align: center;
 }
 
 </style>
