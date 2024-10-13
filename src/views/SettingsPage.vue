@@ -1,5 +1,6 @@
 <template>
     <v-container>
+      <h1>Settings</h1>
       <v-card class="pa-5 mb-5">
         <v-card-title>Account Details</v-card-title>
         <v-card-text>

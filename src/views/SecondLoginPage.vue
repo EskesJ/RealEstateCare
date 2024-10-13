@@ -37,7 +37,7 @@
           store.setSecondAuthenticated(true);
           store.setUsername(localStorage.getItem('username'));
           store.setPassword(localStorage.getItem('password'));
-          this.$router.push({ name: "dashboard" });
+          this.$router.push({ name: "Dashboard" });
         } else {
           alert("Invalid authentication code");
         }

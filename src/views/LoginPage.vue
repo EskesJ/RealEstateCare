@@ -62,7 +62,7 @@ export default {
       if (this.username === storedUsername && this.password === storedPassword) {
         store.setAuthenticated(true);
         this.$router.push({ 
-            name: "secondLogin" 
+            name: "SecondLogin" 
         });
       } else {
         alert("Invalid credentials");

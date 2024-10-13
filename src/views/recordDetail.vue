@@ -149,7 +149,6 @@
         try {
             const data = await apiService.getCompletedRecords();
             this.selectedProject = data.find(record => record.id === parseInt(id));
-            console.log(this.selectedProject.address);
           } catch (error) {
             console.error('Failed to fetch post:', error);
           }  

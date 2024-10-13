@@ -1,5 +1,6 @@
 <template>
     <v-container> 
+      <h1>Completed Records</h1>
       <v-list v-if="records" lines="two">
         <v-list-item v-for="(record, index) in records" :key="record.id">
           <v-btn @click="showDetail(index)" block height="100%" class="bg-white px-0">
@@ -43,7 +44,7 @@
 
       showDetail(index) {
         this.$router.push({
-          name: 'recordDetail',
+          name: 'RecordDetail',
           params: { 
             id: this.records[index].id 
             }
@@ -56,6 +57,10 @@
   <style scoped>
   :deep(.v-btn__overlay) {
     background-color: transparent;
+  }
+
+  h1 {
+    text-align: center;
   }
   </style>
   

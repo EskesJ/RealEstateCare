@@ -1,7 +1,7 @@
 <template>
-    <h1>Knowledge Base</h1>
     <v-container>
-        <v-row class="">
+        <h1>Knowledge Base</h1>
+        <v-row >
             <v-col v-for="(file, index) in guidelines" :key="index" cols="12">
                 <v-btn class="px-0" block height="100%"  @click="downloadFile(file) " >
                     <v-card class="d-flex flex-column align-center justify-center py-3 px-2" variant="text" >

@@ -1,5 +1,5 @@
 <template>
-  <RealEstateCare/>
+  <real-estate-care/>
 </template>
 
 <script>

@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
             <v-col cols="6" class="text-center">
-                <v-btn :to="'/scheduled'" block height="100%" class="bg-white px-0 no-bg-change" tag="router-link">
+                <v-btn :to="'/scheduled-tasks'" block height="100%" class="bg-white px-0 no-bg-change" tag="router-link">
                     <v-card class="d-flex flex-column justify-center align-center" elevation="0">
                         <v-icon
                         icon="mdi-invoice-text-clock"
@@ -14,7 +14,7 @@
                 </v-btn>
             </v-col>
             <v-col cols="6" class="text-center">
-                <v-btn :to="'/completed'" block height="100%" class="bg-white px-0" tag="router-link">
+                <v-btn :to="'/completed-records'" block height="100%" class="bg-white px-0" tag="router-link">
                     <v-card  class="d-flex flex-column justify-center align-center" elevation="0">
                         <v-icon
                         icon="mdi-clipboard-check"
@@ -28,7 +28,7 @@
         </v-row>
         <v-row>
             <v-col cols="6" class="text-center">
-                <v-btn :to="'/knowledge'" block height="100%" class="bg-white px-0" tag="router-link">
+                <v-btn :to="'/knowledge-base'" block height="100%" class="bg-white px-0" tag="router-link">
                     <v-card  class="d-flex flex-column justify-center align-center" elevation="0">
                         <v-icon
                         icon="mdi-database"

@@ -1,66 +1,66 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import { useMainStore } from '@/stores/mainStore';
-import login from '@/views/Login.vue'
-import secondLogin from '@/views/SecondLogin.vue'
+import login from '@/views/LoginPage.vue'
+import secondLogin from '@/views/SecondLoginPage.vue'
 import dashboard from '@/views/MainDashboard.vue'
 import scheduled from '@/views/ScheduledTasks.vue'
 import completedRecords from '@/views/CompletedRecords.vue'
 import knowledge from '@/views/KnowledgeBase.vue'
-import settings from '@/views/Settings.vue'
+import settings from '@/views/SettingsPage.vue'
 import recordDetail from '@/views/RecordDetail.vue'
 import recordAssigned from '@/views/RecordAssigned.vue'
-import information from '@/views/Information.vue'
+import information from '@/views/InformationPage.vue'
 
 
 const routes = [
   { 
     path: '/', 
-    name: 'login',
+    name: 'Login',
     component: login 
     },
   { 
     path: '/second-login', 
-    name: 'secondLogin',
+    name: 'SecondLogin',
     component: secondLogin 
     },
   { 
     path: '/dashboard', 
-    name: 'dashboard',
+    name: 'Dashboard',
     component: dashboard 
     },
   { 
-    path: '/completed', 
-    name: 'completed',
+    path: '/completed-records', 
+    name: 'CompletedRecords',
     component: completedRecords
     },
   { 
     path: '/record-detail/:id', 
-    name: 'recordDetail',
+    name: 'RecordDetail',
     component: recordDetail
     },
   { 
-    path: '/scheduled', 
-    name: 'scheduled',
+    path: '/scheduled-tasks', 
+    name: 'Scheduled',
     component: scheduled
   },
   { 
     path: '/record-assigned/:id', 
-    name: 'recordAssigned',
+    name: 'RecordAssigned',
     component: recordAssigned
   },
   { 
-    path: '/knowledge', 
-    name: 'knowledge',
+    path: '/knowledge-base', 
+    name: 'KnowledgeBase',
     component: knowledge
   },
   { 
     path: '/settings', 
-    name: 'settings',
+    name: 'Settings',
     component: settings
   },
   { 
     path: '/information', 
-    name: 'information',
+    name: 'Information',
     component: information
   },
 ]
@@ -75,22 +75,22 @@ router.beforeEach((to, from, next) => {
   const isAuthenticated = store.authenticated;
   const isSecondAuthenticated = store.secondAuthenticated;
 
-  if (to.name === 'login' && isAuthenticated) {
+  if (to.name === 'Login' && isAuthenticated) {
    
-    next({ name: 'secondLogin' });
-  } else if (to.name === 'secondLogin' && (!isAuthenticated || isSecondAuthenticated)) {
+    next({ name: 'SecondLogin' });
+  } else if (to.name === 'SecondLogin' && (!isAuthenticated || isSecondAuthenticated)) {
    
     if (!isAuthenticated) {
-      next({ name: 'login' });
+      next({ name: 'Login' });
     } else {
-      next({ name: 'dashboard' });
+      next({ name: 'Dashboard' });
     }
-  } else if (!isAuthenticated && to.name !== 'login') {
+  } else if (!isAuthenticated && to.name !== 'Login') {
     
-    next({ name: 'login' });
-  } else if (isAuthenticated && !isSecondAuthenticated && to.name !== 'secondLogin') {
+    next({ name: 'Login' });
+  } else if (isAuthenticated && !isSecondAuthenticated && to.name !== 'SecondLogin') {
       
-    next({ name: 'secondLogin' });
+    next({ name: 'SecondLogin' });
   } else {
 
     next();

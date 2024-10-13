@@ -30,7 +30,7 @@
         methods: {
             showInfo(index) {
                 this.$router.push({
-                    name: 'recordAssigned',
+                    name: 'RecordAssigned',
                     params: {
                         id: this.records[index].id
                     }

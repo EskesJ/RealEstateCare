@@ -134,7 +134,7 @@
           </v-card-text>
         </v-card>
   
-        <v-btn type="submit" color="primary" block class="my-4">Submit Inspection</v-btn>
+        <v-btn type="submit" color="#1E292F" block class="my-4">Submit Inspection</v-btn>
       </v-form>
   
     </v-container>
@@ -205,14 +205,44 @@
             this[section].photos.push(photoUrl);
           }
         },
+
+        sanitizeInput(input) {
+    
+    return input.replace(/[^\w\s.,-]/gi, '');
+  },
+
+        sanitizeFormFields() {
+          
+          if (this.reportedDamage.location) {
+            this.reportedDamage.location = this.sanitizeInput(this.reportedDamage.location);
+          }
+          if (this.reportedDamage.description) {
+            this.reportedDamage.description = this.sanitizeInput(this.reportedDamage.description);
+          }
+          if (this.overdueMaintenance.location) {
+            this.overdueMaintenance.location = this.sanitizeInput(this.overdueMaintenance.location);
+          }
+          if (this.technicalInstallations.location) {
+            this.technicalInstallations.location = this.sanitizeInput(this.technicalInstallations.location);
+          }
+          if (this.technicalInstallations.reportedMalfunction) {
+            this.technicalInstallations.reportedMalfunction = this.sanitizeInput(this.technicalInstallations.reportedMalfunction);
+          }
+          if (this.inventoryModifications.location) {
+            this.inventoryModifications.location = this.sanitizeInput(this.inventoryModifications.location);
+          }
+          if (this.inventoryModifications.description) {
+            this.inventoryModifications.description = this.sanitizeInput(this.inventoryModifications.description);
+          }
+        },
         submitForm() {
+          this.sanitizeFormFields();
           console.log('Form submitted:', {
             reportedDamage: this.reportedDamage,
             overdueMaintenance: this.overdueMaintenance,
             technicalInstallations: this.technicalInstallations,
             inventoryModifications: this.inventoryModifications
           });
-          // Add functionality here to handle form submission, e.g., saving data to the database
         },
       },
     }

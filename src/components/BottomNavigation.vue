@@ -5,12 +5,12 @@
         <span>logout</span>
       </v-btn>
   
-      <v-btn @click="navigateTo('information')" value="info" :active="false">
+      <v-btn @click="navigateTo('Information')" value="info" :active="false">
         <v-icon>mdi-information</v-icon>
         <span>information</span>
       </v-btn>
   
-      <v-btn v-if="isAuthenticated" @click="navigateTo('dashboard')" value="home" :active="false">
+      <v-btn v-if="isAuthenticated" @click="navigateTo('Dashboard')" value="home" :active="false">
         <v-icon>mdi-home</v-icon>
         <span>home</span>
       </v-btn>
@@ -37,7 +37,7 @@
       logout() {
         const store = useMainStore();
         store.logout(); // This will reset the authentication states
-        this.$router.push({ name: "login" });
+        this.$router.push({ name: "Login" });
       },
       resetActive() {
         this.$nextTick(() => {
