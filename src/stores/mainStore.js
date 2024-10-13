@@ -8,6 +8,7 @@ export const useMainStore = defineStore('main', {
     completedRecords: [],
     scheduledTasks: [],
     username: "",
+    password: "",
     authenticated: !!localStorage.getItem("authenticated"),
     secondAuthenticated: !!localStorage.getItem("secondAuthenticated"),
     
@@ -15,8 +16,12 @@ export const useMainStore = defineStore('main', {
 
   // Actions: Functions to fetch and update the state
   actions: {
-    setUsername(newUsername) {
-        this.username = newUsername;
+    setUsername(Username) {
+        this.username = Username;
+      },
+
+    setPassword(Password) {
+        this.password = Password;
       },
 
     setAuthenticated(value) {

@@ -1,7 +1,7 @@
 <template>
     <v-container class="d-flex justify-center align-center fill-height">
       <v-card class="px-5 py-5" max-width="400">
-        <v-card-title class="text-h5">Enter Authentication Code</v-card-title>
+        <v-card-title class="text-h6">Enter Authentication Code</v-card-title>
         <v-card-text>
           <v-form ref="codeForm" @submit.prevent="verifyCode">
             <v-text-field
@@ -36,6 +36,7 @@
         if (this.authCode === correctCode) {
           store.setSecondAuthenticated(true);
           store.setUsername(localStorage.getItem('username'));
+          store.setPassword(localStorage.getItem('password'));
           this.$router.push({ name: "dashboard" });
         } else {
           alert("Invalid authentication code");

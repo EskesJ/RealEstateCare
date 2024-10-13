@@ -1,5 +1,5 @@
 <template>
-        <v-app-bar class="toolbar">
+        <v-app-bar class="toolbar py-1">
             <router-link to="/dashboard"><img class="ml-2 mr-n4" :src="getImgUrl()"></router-link>
             <v-app-bar-title class="custom-text-color">
                 <h1 class="text-h5">Real Estate Care</h1>

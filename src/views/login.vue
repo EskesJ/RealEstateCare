@@ -37,8 +37,12 @@ export default {
   },
 
   mounted() {
-    localStorage.setItem("username", "Jeffrey");
-    localStorage.setItem("password", "pass123");
+    if (!localStorage.getItem("username")) {
+      localStorage.setItem("username", "Jeffrey");
+    }
+    if (!localStorage.getItem("password")) {
+      localStorage.setItem("password", "pass123"); 
+    }
   },
 
   methods: {
