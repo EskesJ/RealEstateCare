@@ -10,7 +10,7 @@
               type="password"
               required
             ></v-text-field>
-            <v-btn type="submit" color="primary" class="mt-4" block>Submit</v-btn>
+            <v-btn type="submit" color="#1E292F" class="mt-4" block>Submit</v-btn>
           </v-form>
         </v-card-text>
       </v-card>
