@@ -91,5 +91,9 @@
   .mb-5 {
     margin-bottom: 20px !important;
   }
+
+  h1 {
+    text-align: center;
+  }
   </style>
   

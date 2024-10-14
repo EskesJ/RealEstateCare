@@ -1,10 +1,17 @@
+# macOS system files
 .DS_Store
-node_modules
-/dist
 
-# local env files
+# Node modules
+node_modules
+
+# Output directories
+/dist
+/build  # Toegevoegd voor andere mogelijke output directories
+
+# Local environment files
 .env.local
 .env.*.local
+.env  # Voeg .env toe voor andere omgevingsvariabelen
 
 # Log files
 npm-debug.log*
@@ -20,3 +27,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Extra: Andere onnodige systeem- en editorbestanden
+Thumbs.db
