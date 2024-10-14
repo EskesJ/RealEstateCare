@@ -5,6 +5,8 @@
         <v-card-text>
           <v-form ref="codeForm" @submit.prevent="verifyCode">
             <v-text-field
+              class="high-contrast-label"
+              aria-label="Authentication Code"
               label="Authentication Code"
               v-model="authCode"
               type="password"
@@ -50,5 +52,9 @@
   .fill-height {
     height: 100vh;
   }
+
+  .high-contrast-label :deep(.v-label){
+      color: black; 
+    }
   </style>
   

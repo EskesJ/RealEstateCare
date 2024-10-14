@@ -5,14 +5,14 @@
         <span>logout</span>
       </v-btn>
   
-      <v-btn @click="navigateTo('Information')" value="info" :active="false">
+      <v-btn @click="navigateTo('Information')" value="info" :active="false" aria-label="Information">
         <v-icon>mdi-information</v-icon>
         <span>information</span>
       </v-btn>
   
-      <v-btn v-if="isAuthenticated" @click="navigateTo('Dashboard')" value="home" :active="false">
-        <v-icon>mdi-home</v-icon>
-        <span>home</span>
+      <v-btn v-if="isAuthenticated" @click="navigateTo('Dashboard')" value="home" :active="false" aria-label="home">
+        <v-icon >mdi-home</v-icon>
+        <span >home</span>
       </v-btn>
     </v-bottom-navigation>
   </template>

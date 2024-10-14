@@ -7,11 +7,15 @@
 
           <v-text-field
             label="Username"
+            aria-label="Username"
+            class="high-contrast-label"
             v-model="username"
             required
           ></v-text-field>
 
           <v-text-field
+          class="high-contrast-label"
+            aria-label="Password"
             label="Password"
             v-model="password"
             type="password"
@@ -76,4 +80,8 @@ export default {
 .fill-height {
   height: 100vh;
 }
+
+.high-contrast-label :deep(.v-label){
+      color: black; 
+    }
 </style>

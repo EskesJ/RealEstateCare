@@ -4,12 +4,12 @@
       <v-card class="pa-5 mb-5">
         <v-card-title>Account Details</v-card-title>
         <v-card-text>
-          <v-text-field label="Username" :value="username" v-model="username" disabled></v-text-field>
-          <v-text-field label="Email" value="inspector@example.com" v-model="email" disabled></v-text-field>
-          <v-file-input label="Avatar" prepend-icon="mdi-account-circle" accept="image/*" :alt="username + ' avatar'"></v-file-input>
-          <v-text-field v-model="oldPassword" label="Old password" type="password"></v-text-field>
-          <v-text-field v-model="newPassword" label="New Password" type="password"></v-text-field>
-          <v-text-field v-model="repeatNewPassword" label="Repeat New Password" type="password"></v-text-field>
+          <v-text-field label="Username" aria-label="Username" :value="username" v-model="username" disabled class="high-contrast-label"></v-text-field>
+          <v-text-field label="Email" aria-label="Email" value="inspector@example.com" v-model="email" disabled class="high-contrast-label"></v-text-field>
+          <v-file-input label="Avatar" aria-label="Avatar" prepend-icon="mdi-account-circle" accept="image/*" :alt="username + ' avatar'" class="high-contrast-label"></v-file-input>
+          <v-text-field v-model="oldPassword" label="Old password" aria-label="Old password" type="password" class="high-contrast-label" ></v-text-field>
+          <v-text-field v-model="newPassword" label="New Password" aria-label="New Password" type="password" class="high-contrast-label"></v-text-field>
+          <v-text-field v-model="repeatNewPassword" label="Repeat New Password" aria-label="Repeat New Password" type="password" class="high-contrast-label"></v-text-field>
           <v-btn @click="changePassword()" color="#1E292F">Change password</v-btn>
         </v-card-text>
       </v-card>
@@ -17,9 +17,10 @@
       <v-card class="pa-5 mb-5">
         <v-card-title>Interface Preferences</v-card-title>
         <v-card-text>
-          <v-switch label="Dark Mode"></v-switch>
+          <v-switch label="Dark Mode" class="high-contrast-label"></v-switch>
           <v-select
-            label="Theme Color"
+            class="high-contrast-label"
+            aria-label="Theme Color"
             :items="['Blue', 'Green', 'Red', 'Purple']"
             v-model="selectedThemeColor"
           ></v-select>
@@ -29,8 +30,8 @@
       <v-card class="pa-5 mb-5">
         <v-card-title>Notifications</v-card-title>
         <v-card-text>
-          <v-switch label="Show Notifications" v-model="showNotifications"></v-switch>
-          <v-switch label="Enable Sounds" v-model="enableSounds"></v-switch>
+          <v-switch label="Show Notifications" aria-label="Show Notifications" v-model="showNotifications" class="high-contrast-label"></v-switch>
+          <v-switch label="Enable Sounds" aria-label="Enable Sounds" v-model="enableSounds" class="high-contrast-label"></v-switch>
         </v-card-text>
       </v-card>
     </v-container>
@@ -98,5 +99,14 @@
   h1 {
     text-align: center;
   }
+
+  .high-contrast-label :deep(.v-label){
+      color: black; 
+    }
+
+  .v-select{
+      color: black;
+    }
+
   </style>
   

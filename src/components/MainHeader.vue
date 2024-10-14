@@ -5,8 +5,8 @@
                 <h1 class="text-h5">Real Estate Care</h1>
                 <p class="text-subtitle-2 font-weight-light mt-n1">Caring is in our nature</p>
             </v-app-bar-title>
-            <router-link to="/settings">
-                <v-btn v-if="isAuthenticated" icon class="mr-2">
+            <router-link to="/settings" aria-label="settings">
+                <v-btn v-if="isAuthenticated" icon class="mr-2"  aria-label="settings">
                   <v-icon class="custom-text-color">mdi-cog</v-icon>
                 </v-btn>
             </router-link>
