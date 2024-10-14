@@ -6,9 +6,10 @@
         <v-card-text>
           <v-text-field label="Username" :value="username" v-model="username" disabled></v-text-field>
           <v-text-field label="Email" value="inspector@example.com" v-model="email" disabled></v-text-field>
-          <v-file-input label="Avatar" prepend-icon="mdi-account-circle" accept="image/*"></v-file-input>
+          <v-file-input label="Avatar" prepend-icon="mdi-account-circle" accept="image/*" :alt="username + ' avatar'"></v-file-input>
           <v-text-field v-model="oldPassword" label="Old password" type="password"></v-text-field>
           <v-text-field v-model="newPassword" label="New Password" type="password"></v-text-field>
+          <v-text-field v-model="repeatNewPassword" label="Repeat New Password" type="password"></v-text-field>
           <v-btn @click="changePassword()" color="#1E292F">Change password</v-btn>
         </v-card-text>
       </v-card>
@@ -46,6 +47,7 @@
         email: 'inspector@example.com',
         oldPassword: "",
         newPassword: "",
+        repeatNewPassword: "",
         selectedThemeColor: 'Blue',
         showNotifications: true,
         enableSounds: false,
@@ -71,11 +73,12 @@
       changePassword() {
         console.log(this.password); 
         if (this.oldPassword.length && this.newPassword.length) {
-          if (this.oldPassword === this.password) {
+          if (this.oldPassword === this.password && this.newPassword === this.repeatNewPassword) {
             this.store.setPassword(this.newPassword);
             localStorage.setItem("password", this.newPassword);
+            alert("Wachtwoord is gewijzigd");
           } else {
-            console.log("Old password does not match");
+            alert("Old password does not match or new passwords do not match");
           }
         }
       }

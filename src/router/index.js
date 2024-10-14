@@ -75,24 +75,32 @@ router.beforeEach((to, from, next) => {
   const isAuthenticated = store.authenticated;
   const isSecondAuthenticated = store.secondAuthenticated;
 
-  if (to.name === 'Login' && isAuthenticated) {
-   
+  // Allow access to the information page regardless of authentication status
+  if (to.name === 'Information') {
+    next();
+  } 
+  // Redirect from Login to SecondLogin if the user is authenticated but hasn't completed the second login
+  else if (to.name === 'Login' && isAuthenticated) {
     next({ name: 'SecondLogin' });
-  } else if (to.name === 'SecondLogin' && (!isAuthenticated || isSecondAuthenticated)) {
-   
+  } 
+  // Redirect from SecondLogin if the user is not authenticated or has already completed second authentication
+  else if (to.name === 'SecondLogin' && (!isAuthenticated || isSecondAuthenticated)) {
     if (!isAuthenticated) {
       next({ name: 'Login' });
     } else {
       next({ name: 'Dashboard' });
     }
-  } else if (!isAuthenticated && to.name !== 'Login') {
-    
+  } 
+  // Redirect to Login if not authenticated and trying to access any other page
+  else if (!isAuthenticated && to.name !== 'Login') {
     next({ name: 'Login' });
-  } else if (isAuthenticated && !isSecondAuthenticated && to.name !== 'SecondLogin') {
-      
+  } 
+  // Redirect to SecondLogin if authenticated but not fully authenticated and accessing other restricted pages
+  else if (isAuthenticated && !isSecondAuthenticated && to.name !== 'SecondLogin') {
     next({ name: 'SecondLogin' });
-  } else {
-
+  } 
+  // Allow navigation to the intended route
+  else {
     next();
   }
 });

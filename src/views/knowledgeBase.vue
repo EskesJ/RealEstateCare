@@ -6,7 +6,7 @@
                 <v-btn class="px-0" block height="100%"  @click="downloadFile(file) " >
                     <v-card class="d-flex flex-column align-center justify-center py-3 px-2" variant="text" >
                         <span class="file-name">{{ file }}</span>
-                        <v-icon size="30px" class="my-1">mdi-file-pdf-box</v-icon>
+                        <v-icon size="30px" class="my-1" :aria-label="'PDF document icon for ' + file">mdi-file-pdf-box</v-icon>
                     </v-card>
                     
                 </v-btn>
@@ -36,7 +36,7 @@
         },
         methods: {
             downloadFile(file) {
-                console.log('downloading ' + file);
+                alert('downloading ' + file);
             }
         }
     }

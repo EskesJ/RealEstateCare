@@ -1,3 +1,5 @@
+//the data retrieved from the web api will be initialized with the Inspection class
+
 class Inspection {
   constructor({ id, address, dateToVisit, visitedDate, reportedDamage = [], overdueMaintenance = [], technicalInstallations = [], inventoryModifications = [], status = 'Assigned' }) {
     this.id = id;

@@ -1,6 +1,6 @@
 <template>
     <v-bottom-navigation class="custom-navigation">
-      <v-btn v-if="isAuthenticated" @click="logout" value="logout" :active="false">
+      <v-btn v-if="isAuthenticated" @click="logout" value="logout" :active="false" aria-label="log out">
         <v-icon>mdi-logout</v-icon>
         <span>logout</span>
       </v-btn>
@@ -23,12 +23,14 @@
   export default {
     name: 'recBottomNavigation',
     computed: {
+      //this functions checks if the user is logged in, if false then some buttons will not appear.
       isAuthenticated() {
         const store = useMainStore();
         return store.authenticated && store.secondAuthenticated;
       }
     },
     methods: {
+      //this functions makes it so that when a navigation button is pressed, it doesn't appear pressed on the next page
       navigateTo(routeName) {
         this.$router.push({ name: routeName }).then(() => {
           this.resetActive();
