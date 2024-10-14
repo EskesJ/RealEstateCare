@@ -29,7 +29,7 @@ Ik heb gedurende het proces meerdere keren feedback ontvangen en mijn applicatie
 prototype met een basisfunctionaliteit voor inspecteurs maar met ruimte voor verdere ontwikkeling.
 
 ## Alert commands en console.log commands
-- **Alle alert berichten en console.log berichten zijn er puur ter ondersteuning voor het beoordelen van de mockup applicatie. Deze zouden in de echte applicatie verwijderd worden.
+- Alle alert berichten en console.log berichten zijn er puur ter ondersteuning voor het beoordelen van de mockup applicatie. Deze zouden in de echte applicatie verwijderd worden.
 
 ## Functionaliteiten
 
