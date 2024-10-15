@@ -4,11 +4,11 @@ import login from '@/views/LoginPage.vue'
 import secondLogin from '@/views/SecondLoginPage.vue'
 import dashboard from '@/views/MainDashboard.vue'
 import scheduled from '@/views/ScheduledTasks.vue'
-import completedRecords from '@/views/CompletedReecords.vue'
-import knowledge from '@/views/KnowledgeeBase.vue'
+import completedRecords from '@/views/CompletedRecords.vue'
+import knowledge from '@/views/KnowledgeBase.vue'
 import settings from '@/views/SettingsPage.vue'
-import recordDetail from '@/views/RecordDeetail.vue'
-import recordAssigned from '@/views/RecordAssigneed.vue'
+import recordDetail from '@/views/RecordDetail.vue'
+import recordAssigned from '@/views/RecordAssigned.vue'
 import information from '@/views/InformationPage.vue'
 
 
@@ -24,7 +24,7 @@ const routes = [
     component: secondLogin
     },
   { 
-    path: '/dashboard', 
+    path: '/dashboard',
     name: 'Dashboard',
     component: dashboard
     },
