@@ -3,7 +3,7 @@ import { useMainStore } from '@/stores/mainStore';
 import login from '@/views/LoginPage.vue'
 import secondLogin from '@/views/SecondLoginPage.vue'
 import dashboard from '@/views/MainDashboard.vue'
-import scheduledd from '@/views/ScheduledTasks.vue'
+import scheduled from '@/views/ScheduledTasks.vue'
 import completedRecords from '@/views/CompletedRecords.vue'
 import knowledge from '@/views/KnowledgeBase.vue'
 import settings from '@/views/SettingsPage.vue'
