@@ -96,8 +96,12 @@ component- en variabelennamen in `PascalCase` en `kebab-case`, waar toepasselijk
 
 ## WCAG 2.1 Niveau A Richtlijnen
 
-| **1.1.1 – Niet-tekstuele inhoud** | Bied tekstalternatieven voor inhoud zonder tekst | **Gelukt**. Alle niet-tekstuele inhoud, zoals iconen, hebben alternatieve teksten waar nodig. |
-| **1.2.1 – Alleen audio en alleen video (vooraf gemaakt)** | Bied een alternatief voor alleen video en audio | **Niet van toepassing**. De applicatie bevat geen audio of video. |
+**1.1.1 – Niet-tekstuele inhoud** | Bied tekstalternatieven voor inhoud zonder tekst 
+**Gelukt**. Alle niet-tekstuele inhoud, zoals iconen, hebben alternatieve teksten waar nodig.
+
+**1.2.1 – Alleen audio en alleen video (vooraf gemaakt)** | Bied een alternatief voor alleen video en audio | 
+**Niet van toepassing**. De applicatie bevat geen audio of video.
+
 | **1.2.2 – Bijschriften (vooraf opgenomen)** | Geef bijschriften voor video’s met audio | **Niet van toepassing**. De applicatie bevat geen video's. |
 | **1.2.3 – Audiobeschrijving of media-alternatief (vooraf opgenomen)** | Video met audio heeft een tweede alternatief | **Niet van toepassing**. De applicatie bevat geen video's. |
 | **1.3.1 – Info en relaties** | Logische structuur | **Gelukt**. Er is een logische structuur aangehouden, en alle invoervelden hebben labels. |
