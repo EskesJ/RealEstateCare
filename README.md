@@ -96,7 +96,7 @@ component- en variabelennamen in `PascalCase` en `kebab-case`, waar toepasselijk
 
 ## WCAG 2.1 Niveau A Richtlijnen
 
-**1.1.1 – Niet-tekstuele inhoud** | Bied tekstalternatieven voor inhoud zonder tekst 
+**1.1.1 – Niet-tekstuele inhoud** Bied tekstalternatieven voor inhoud zonder tekst   
 **Gelukt**. Alle niet-tekstuele inhoud, zoals iconen, hebben alternatieve teksten waar nodig.
 
 **1.2.1 – Alleen audio en alleen video (vooraf gemaakt)** | Bied een alternatief voor alleen video en audio | 
