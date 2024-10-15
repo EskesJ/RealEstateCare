@@ -1,0 +1,2 @@
+#Netlify settings for spa
+/*    /index.html   200
