@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import { useMainStore } from '@/stores/mainStore';    
+    import { useMainStore } from '@/stores/mainStore'; 
 
     export default {
         name: 'scheduled',
