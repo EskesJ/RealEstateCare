@@ -20,6 +20,7 @@
           <v-switch label="Dark Mode" class="high-contrast-label"></v-switch>
           <v-select
             class="high-contrast-label"
+            label="Theme Color"
             aria-label="Theme Color"
             :items="['Blue', 'Green', 'Red', 'Purple']"
             v-model="selectedThemeColor"

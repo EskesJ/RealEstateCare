@@ -29,9 +29,10 @@
           </li>
         </ul>
         <v-file-input 
-          class="my-2"
+          class="my-2 high-contrast-label"
           accept="image/*"
           label="Upload Photos"
+          aria-label="Upload Photos"
           @change="uploadPhoto('reportedDamage', $event)"
           prepend-icon="mdi-camera"
         ></v-file-input>
@@ -56,9 +57,10 @@
           </li>
         </ul>
         <v-file-input
-          class="my-2"
+          class="my-2 high-contrast-label"
           accept="image/*"
           label="Upload Photos"
+          aria-label="Upload Photos"
           @change="uploadPhoto('overdueMaintenance', $event)"
           prepend-icon="mdi-camera"
         ></v-file-input>
@@ -85,9 +87,10 @@
           </li>
         </ul>
         <v-file-input
-          class="my-2"
+          class="my-2 high-contrast-label"
           accept="image/*"
           label="Upload Photos"
+          aria-label="Upload Photos"
           @change="uploadPhoto('technicalInstallations', $event)"
           prepend-icon="mdi-camera"
         ></v-file-input>
@@ -98,7 +101,7 @@
       </v-card-text>
     </v-card>
 
-    <v-card class="my-2">
+    <v-card class="my-2 high-contrast-label">
       <v-card-item>
         <v-card-title>Inventory Modifications</v-card-title>
       </v-card-item>
@@ -117,6 +120,7 @@
           class="my-2"
           accept="image/*"
           label="Upload Photos"
+          aria-label="Upload Photos"
           @change="uploadPhoto('inventoryModifications', $event)"
           prepend-icon="mdi-camera"
         ></v-file-input>
@@ -172,4 +176,6 @@
   img {
     max-inline-size: 100%;
   }
+
+
   </style>

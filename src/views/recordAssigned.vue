@@ -20,30 +20,33 @@
         <v-card class="my-4">
           <v-card-title>Reported Damage</v-card-title>
           <v-card-text>
-            <v-text-field v-model="reportedDamage.location" label="Location" outlined></v-text-field>
-            <v-radio-group v-model="reportedDamage.newDamage" label="New Damage?" row>
+            <v-text-field v-model="reportedDamage.location" aria-label="Location" label="Location" outlined></v-text-field>
+            <v-radio-group class="high-contrast-label" v-model="reportedDamage.newDamage" label="New Damage?" aria-label="New Damage?" row>
               <v-radio label="Yes" value="Yes"></v-radio>
               <v-radio label="No" value="No"></v-radio>
             </v-radio-group>
             <v-select
+              class="high-contrast-label"
               v-model="reportedDamage.typeOfDamage"
               :items="['Vandalism', 'Wear and Tear', 'Violence', 'Normal Use', 'Calamity', 'Other']"
               label="Type of Damage"
               outlined
             ></v-select>
             <v-text-field
+              class="high-contrast-label"
               v-model="reportedDamage.date"
               label="Date of Damage"
+              aria-label="Date of Damage"
               prepend-icon="mdi-calendar"
               type="date"
               outlined
             ></v-text-field>
-            <v-radio-group v-model="reportedDamage.urgent" label="Urgent?" row>
-              <v-radio label="Yes" value="Yes"></v-radio>
-              <v-radio label="No" value="No"></v-radio>
+            <v-radio-group v-model="reportedDamage.urgent" label="Urgent?" row class="high-contrast-label">
+              <v-radio label="Yes" value="Yes" class="high-contrast-label"></v-radio>
+              <v-radio label="No" value="No" class="high-contrast-label"></v-radio>
             </v-radio-group>
-            <v-textarea v-model="reportedDamage.description" label="Description" outlined></v-textarea>
-            <v-file-input label="Upload Photos" accept="image/*" @change="uploadPhoto('reportedDamage', $event)" prepend-icon="mdi-camera" outlined></v-file-input>
+            <v-textarea v-model="reportedDamage.description" label="Description" aria-label="Description" outlined></v-textarea>
+            <v-file-input class="high-contrast-label" label="Upload Photos" aria-label="Upload Photos" accept="image/*" @change="uploadPhoto('reportedDamage', $event)" prepend-icon="mdi-camera" outlined></v-file-input>
             <div v-if="reportedDamage.photos.length">
               <h4>Uploaded Photos:</h4>
               <img v-for="(photo, i) in reportedDamage.photos" :key="i" :src="photo" alt="Reported Damage Photo" style="max-width: 100px; margin-right: 10px;" />
@@ -55,11 +58,13 @@
         <v-card class="my-4">
           <v-card-title>Overdue Maintenance</v-card-title>
           <v-card-text>
-            <v-text-field v-model="overdueMaintenance.location" label="Location" outlined></v-text-field>
+            <v-text-field class="high-contrast-label" v-model="overdueMaintenance.location" label="Location" aria-label="Location" outlined></v-text-field>
             <v-select
+              class="high-contrast-label"
               v-model="overdueMaintenance.typeOfMaintenance"
               :items="['Painting', 'Wood Rot', 'Electrical', 'Plumbing', 'Glazing']"
               label="Type of Maintenance"
+              aria-label="Type of Maintenance"
               outlined
             ></v-select>
             <v-radio-group v-model="overdueMaintenance.urgent" label="Urgent?" row>
@@ -67,12 +72,14 @@
               <v-radio label="No" value="No"></v-radio>
             </v-radio-group>
             <v-select
+              class="high-contrast-label"
               v-model="overdueMaintenance.costsIndication"
               :items="['0-500', '500-1,500', '1,500+']"
+              aria-label="Costs Indication"
               label="Costs Indication"
               outlined
             ></v-select>
-            <v-file-input label="Upload Photos" accept="image/*" @change="uploadPhoto('overdueMaintenance', $event)" prepend-icon="mdi-camera" outlined></v-file-input>
+            <v-file-input class="high-contrast-label" label="Upload Photos" aria-label="Upload Photos" accept="image/*" @change="uploadPhoto('overdueMaintenance', $event)" prepend-icon="mdi-camera" outlined></v-file-input>
             <div v-if="overdueMaintenance.photos.length">
               <h4>Uploaded Photos:</h4>
               <img v-for="(photo, i) in overdueMaintenance.photos" :key="i" :src="photo" alt="Overdue Maintenance Photo" style="max-width: 100px; margin-right: 10px;" />
@@ -84,21 +91,23 @@
         <v-card class="my-4">
           <v-card-title>Technical Installations</v-card-title>
           <v-card-text>
-            <v-text-field v-model="technicalInstallations.location" label="Location" outlined></v-text-field>
+            <v-text-field class="high-contrast-label" v-model="technicalInstallations.location" label="Location" aria-label="Location" outlined></v-text-field>
             <v-select
+              class="high-contrast-label"
               v-model="technicalInstallations.typeOfInstallation"
               :items="['Cooling', 'Heating', 'Ventilation', 'Electrical', 'Security']"
               label="Type of Installation"
               outlined
             ></v-select>
-            <v-textarea v-model="technicalInstallations.reportedMalfunction" label="Reported Malfunction" outlined></v-textarea>
-            <v-text-field v-model="technicalInstallations.testProcedure" label="Test Procedure" outlined></v-text-field>
-            <v-radio-group v-model="technicalInstallations.approved" label="Approved?" row>
-              <v-radio label="Yes" value="Yes"></v-radio>
-              <v-radio label="No" value="No"></v-radio>
+            <v-textarea class="high-contrast-label" v-model="technicalInstallations.reportedMalfunction" label="Reported Malfunction" aria-label="Reported Malfunction"  outlined></v-textarea>
+            <v-text-field class="high-contrast-label" v-model="technicalInstallations.testProcedure" label="Test Procedure" aria-label="Test Procedure" outlined></v-text-field>
+            <v-radio-group class="high-contrast-label" v-model="technicalInstallations.approved" row aria-labelledby="approvedLabel">
+              <v-label id="approvedLabel">Approved?</v-label>
+              <v-radio class="high-contrast-label" label="Yes" value="Yes"></v-radio>
+              <v-radio class="high-contrast-label" label="No" value="No"></v-radio>
             </v-radio-group>
-            <v-textarea v-model="technicalInstallations.comments" label="Comments" outlined></v-textarea>
-            <v-file-input label="Upload Photos" accept="image/*" @change="uploadPhoto('technicalInstallations', $event)" prepend-icon="mdi-camera" outlined></v-file-input>
+            <v-textarea class="high-contrast-label" v-model="technicalInstallations.comments" label="Comments" aria-label="Comments" outlined></v-textarea>
+            <v-file-input class="high-contrast-label" label="Upload Photos" aria-label="Upload Photos" accept="image/*" @change="uploadPhoto('technicalInstallations', $event)" prepend-icon="mdi-camera" outlined></v-file-input>
             <div v-if="technicalInstallations.photos.length">
               <h4>Uploaded Photos:</h4>
               <img v-for="(photo, i) in technicalInstallations.photos" :key="i" :src="photo" alt="Technical Installation Photo" style="max-width: 100px; margin-right: 10px;" />
@@ -110,23 +119,25 @@
         <v-card class="my-4">
           <v-card-title>Inventory Modifications</v-card-title>
           <v-card-text>
-            <v-textarea v-model="inventoryModifications.currentModifications" label="Current Modifications" outlined></v-textarea>
-            <v-text-field v-model="inventoryModifications.location" label="Location" outlined></v-text-field>
+            <v-textarea class="high-contrast-label" v-model="inventoryModifications.currentModifications" label="Current Modifications" aria-label="Current Modifications" outlined></v-textarea>
+            <v-text-field class="high-contrast-label" v-model="inventoryModifications.location" label="Location" aria-label="Location" outlined></v-text-field>
             <v-select
+              class="high-contrast-label"
               v-model="inventoryModifications.performedBy"
               :items="['Tenant', 'Contractor', 'Unknown']"
               label="Performed By"
               outlined
             ></v-select>
-            <v-textarea v-model="inventoryModifications.description" label="Description" outlined></v-textarea>
+            <v-textarea class="high-contrast-label" v-model="inventoryModifications.description" label="Description" aria-label="Description" outlined></v-textarea>
             <v-select
+              class="high-contrast-label"
               v-model="inventoryModifications.toDo"
               :items="['Accept', 'Inspect and Approve', 'Remove', 'Modify and Approve']"
               label="To Do"
               outlined
             ></v-select>
-            <v-textarea v-model="inventoryModifications.comments" label="Comments" outlined></v-textarea>
-            <v-file-input label="Upload Photos" accept="image/*" @change="uploadPhoto('inventoryModifications', $event)" prepend-icon="mdi-camera" outlined></v-file-input>
+            <v-textarea class="high-contrast-label" v-model="inventoryModifications.comments" label="Comments" aria-label="Comments" outlined></v-textarea>
+            <v-file-input class="high-contrast-label" label="Upload Photos" aria-label="Upload Photos" accept="image/*" @change="uploadPhoto('inventoryModifications', $event)" prepend-icon="mdi-camera" outlined></v-file-input>
             <div v-if="inventoryModifications.photos.length">
               <h4>Uploaded Photos:</h4>
               <img v-for="(photo, i) in inventoryModifications.photos" :key="i" :src="photo" alt="Inventory Modification Photo" style="max-width: 100px; margin-right: 10px;" />
@@ -252,6 +263,14 @@
     img {
       max-width: 100px;
       margin-right: 10px;
+    }
+
+    .high-contrast-label {
+      color: black; 
+    }
+
+    .v-label {
+      color: black !important;
     }
   </style>
   
